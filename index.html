@@ -1,0 +1,81 @@
+﻿<!doctype html>
+<html lang="he">
+<head>
+    <meta charset="utf-8" />
+    <title>יצירת דמות גיבור/ה על</title>
+    <meta name="description" content="טופס אינטראקטיבי ליצירת דמות גיבור למשחק" />
+    <meta name="keywords" content="משחק, גיבור, טופס, תכנות" />
+    <meta name="author" content="" />
+    <meta name="viewport" content="">
+    <!-- CSS -->
+    <link href="styles/myStyle.css" rel="stylesheet" />
+    <!-- Scripts -->
+    <script src="jScripts/JavaScript.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="container">
+    <h1>יצירת דמות גיבור/ת על</h1>
+    <div class="main-layout">
+        <div class="form-column">
+            <div class="form-group">
+                <label for="heroName">שם הגיבור/ה:</label>
+                <input type="text" id="heroName" placeholder="הכנס את שם הדמות" oninput="checkFormValidity()" />
+            </div>
+            <div class="form-group">
+                <label>בחר סוג דמות:</label><br />
+                <input type="radio" id="radioHeroMale" name="heroType" value="גיבור" onclick="toggleHeroImage(); checkFormValidity();" />
+                <label for="radioHeroMale">גיבור</label>
+
+                <input type="radio" id="radioHeroFemale" name="heroType" value="גיבורה" onclick="toggleHeroImage(); checkFormValidity();" />
+                <label for="radioHeroFemale">גיבורה</label>
+            </div>
+            <div class="form-group">
+                <label>בחר גלימה (אחת לבחירה):</label><br />
+                <input type="checkbox" id="chkBlueCloak" name="cloak" value="גלימה כחולה" onclick="selectSingleEquipment('cloak', 'imgBlueCloak', this);" />
+                <label for="chkBlueCloak">גלימה כחולה</label>
+
+                <input type="checkbox" id="chkBlackCloak" name="cloak" value="גלימה שחורה" onclick="selectSingleEquipment('cloak', 'imgBlackCloak', this);" />
+                <label for="chkBlackCloak">גלימה שחורה</label>
+
+                <input type="checkbox" id="chkPinkCloak" name="cloak" value="גלימה ורודה" onclick="selectSingleEquipment('cloak', 'imgPinkCloak', this);" />
+                <label for="chkPinkCloak">גלימה ורודה</label>
+            </div>
+
+            <div class="form-group">
+                <label>בחר מגן (אחד לבחירה):</label><br />
+                <input type="checkbox" id="chkBlueShield" name="shield" value="מגן כחול" onclick="selectSingleEquipment('shield', 'imgBlueShield', this);" />
+                <label for="chkBlueShield">מגן כחול</label>
+
+                <input type="checkbox" id="chkBlackShield" name="shield" value="מגן שחור" onclick="selectSingleEquipment('shield', 'imgBlackShield', this);" />
+                <label for="chkBlackShield">מגן שחור</label>
+
+                <input type="checkbox" id="chkPinkShield" name="shield" value="מגן ורוד" onclick="selectSingleEquipment('shield', 'imgPinkShield', this);" />
+                <label for="chkPinkShield">מגן ורוד</label>
+            </div>
+            
+            <div class="form-group">
+                <input type="button" id="submitBtn" value="צור דמות" disabled onclick="createHeroSummary()" />
+            </div>
+
+            <div id="summaryResult" class="summary-box"></div>
+        </div>
+        
+        <div class="preview-column">
+            <div class="image-preview-container">
+                <img id="imgMale" src="images/hero_male.jpg" alt="תמונת דמות גיבור זכר" class="hero-img" />
+                <img id="imgFemale" src="images/hero_female.jpg" alt="תמונת דמות גיבורה נקבה" class="hero-img" />
+            </div>
+
+            <div class="equipment-preview-container">
+                <img id="imgBlueCloak" src="images/blue_cloak.jpg" alt="תמונת גלימה כחולה" class="eq-img" />
+                <img id="imgBlackCloak" src="images/black_cloak.jpg" alt="תמונת גלימה שחורה" class="eq-img" />
+                <img id="imgPinkCloak" src="images/pink_cloak.jpg" alt="תמונת גלימה ורודה" class="eq-img" />
+                <img id="imgBlueShield" src="images/blue_shield.jpg" alt="תמונת מגן כחול" class="eq-img" />
+                <img id="imgBlackShield" src="images/black_shield.jpg" alt="תמונת מגן שחור" class="eq-img" />
+                <img id="imgPinkShield" src="images/pink_shield.jpg" alt="תמונת מגן ורוד" class="eq-img" />
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
